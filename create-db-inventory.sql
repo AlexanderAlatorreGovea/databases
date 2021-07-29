@@ -19,5 +19,5 @@ INSERT INTO `products` VALUES (6,'Petit Baguette',14,2.39);
 INSERT INTO `products` VALUES (7,'Sweet Pea Sprouts',98,3.29);
 INSERT INTO `products` VALUES (8,'Island Oasis - Raspberry',26,0.74);
 INSERT INTO `products` VALUES (9,'Longan',67,2.26);
-INSERT INTO `products` VALUES (10,'Broom - Push',6,1.09);
+
 
