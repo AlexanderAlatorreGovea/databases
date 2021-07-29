@@ -1,0 +1,96 @@
+//to select the database
+    USE sql_store
+
+//SELECT  
+    //to select all or choose 
+    SELECT *
+    FROM customers
+
+//Filter 
+
+USE sql_store;
+
+    SELECT *
+    -- FROM customers
+    -- WHERE customer_id = 1
+    -- ORDER BY first_name
+
+
+
+    SELECT first_name, last_name
+    FROM customers
+
+//select all of these from this customers table and multiple by 10
+
+    SELECT 
+        first_name, 
+        last_name, 
+        (points * 10) + 100
+    FROM customers
+
+// "AS" serves as an alias for a new column you want to make (points * 10 + 100 AS discount_factor)
+
+
+//DISTINCT
+//to not select duplicates
+
+    SELECT DISTINCT state 
+    FROM customers
+
+
+//WHERE clause
+
+    SELECT *
+    FROM Customers
+    WHERE points > 3000
+
+
+//when you are requesting a string, set it as a string 
+    SELECT *
+    FROM Customers
+    WHERE state = 'VA'
+
+//not equal
+
+    SELECT *
+        FROM Customers
+        WHERE state != 'VA'
+
+//for dates we use year-month-day
+
+    SELECT *
+    FROM Customers
+    WHERE birth_date > '1990-01-01'
+
+
+
+//combine multiple conditions for combining date and points 
+//AND, OR 
+
+    SELECT *
+    FROM Customers
+    WHERE birth_date >= '1990-01-01' AND points > 1000
+
+    SELECT *
+    FROM Customers
+    WHERE birth_date >= '1990-01-01' OR points > 1000 AND state = 'VA'
+
+
+
+//NOT operator
+
+    SELECT *
+    FROM Customers
+    WHERE NOT (birth_date >= '1990-01-01' OR 
+	points > 1000 AND state = 'VA')
+
+//IN used to combine multiple OR statement 
+
+    SELECT * 
+    FROM order_items
+    WHERE state IN ('VA', 'FL', 'GA')
+
+//NOT IN used to combine multiple OR statement 
+    SELECT * 
+    FROM order_items
+    WHERE state IN ('VA', 'FL', 'GA')

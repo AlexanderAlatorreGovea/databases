@@ -1,0 +1,34 @@
+-- Return all the products
+-- name
+-- unit price
+-- new price (unit price * 1.1)
+
+SELECT 
+	name, 
+    unit_price,
+    (unit_price * 1.1) as 'new price'
+FROM products
+
+
+-- Get the orders placed this year or 2019
+
+SELECT *
+FROM orders
+WHERE order_date >= '2019-01-01'
+
+
+-- From the order_items table, get the items 
+-- for order 6
+-- where the total price is greater than 30 
+
+    SELECT * 
+    FROM order_items
+    WHERE order_id = 6 
+    AND quantity * unit_price > 30
+
+-- Return products with quantity in stock equal to 49, 38, 72
+
+    SELECT * 
+    FROM products
+    WHERE quantity_in_stock IN (48, 38, 72)
+
