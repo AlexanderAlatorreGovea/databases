@@ -94,3 +94,38 @@ USE sql_store;
     SELECT * 
     FROM order_items
     WHERE state IN ('VA', 'FL', 'GA')
+
+//BETWEEN choose values BETWEEN 2 params
+
+    SELECT * 
+    FROM customers
+    WHERE birth_date BETWEEN '1990/01/01' AND '2000/01/01'
+
+//LIKE 
+    //b% (where something starts with b with any number of characters)
+    //brush% (where something starts with b with any number of characters)
+    //%b% too look for any customers with a b somewhere in their last_name
+    //%y customers whose last name ends with y
+    //_y last anmes with 2 characters long and the second one has a y
+    //____y 4 underscors and last leter ends with y 
+    //b____y starts with b then there are 4 characters and then end with a y 
+
+    SELECT * 
+    FROM customers
+    WHERE last_name LIKE 'b%'
+
+
+//REGEXP regex 
+//^field last name needs to start with field 
+//field$ last name needs to end with field with ($)
+//'field|mac' the pipe (|) allows you to look for either one of the strings so either field or mac in this case
+
+    SELECT * 
+    FROM customers
+    WHERE last_name REGEXP '%field%' 
+
+    SELECT * 
+    FROM customers
+    WHERE last_name REGEXP '^field%' 
+
+
