@@ -119,6 +119,15 @@ USE sql_store;
 //^field last name needs to start with field 
 //field$ last name needs to end with field with ($)
 //'field|mac' the pipe (|) allows you to look for either one of the strings so either field or mac in this case
+//'^field|mac|rose' should start with the name field or mac or rose 
+//'field|mac|rose$' should have field or mac or rose 
+//'[gim]e' this will match any customers that have ge or ie or me in their last name
+
+// ^ beginning
+// $ end 
+// | logical or 
+// [abc] match any letters
+// [a-f] match any letter from a-f
 
     SELECT * 
     FROM customers
@@ -128,4 +137,14 @@ USE sql_store;
     FROM customers
     WHERE last_name REGEXP '^field%' 
 
+
+//missing values (where something is null)
+
+    SELECT * 
+    FROM customers
+    WHERE phone IS NULL
+
+//ORDER BY clause
+
+    
 

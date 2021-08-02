@@ -40,3 +40,37 @@ WHERE order_date >= '2019-01-01'
     FROM customers
     WHERE address LIKE '%trail%' OR 
         address LIKE '%avenue%'
+
+
+--  Get the customers whose 
+--  firstname are Elka or Ambur
+
+    SELECT * 
+    FROM customers
+    WHERE first_name REGEXP 'elka|elka'
+
+
+--  last names end with EY or ON 
+
+    SELECT * 
+    FROM customers
+    WHERE last_name REGEXP 'EY$|ON$' 
+
+--  last names start with MY or contain SE 
+
+    SELECT * 
+    FROM customers
+    WHERE last_name REGEXP '^my|se'  
+
+
+--  last names contain B followed by R or U 
+
+    SELECT * 
+    FROM customers
+    WHERE last_name REGEXP 'b[ru]'  
+
+-- get orders that have not shipped yet
+
+    SELECT * 
+    FROM orders
+    WHERE shipped_id IS NULL
